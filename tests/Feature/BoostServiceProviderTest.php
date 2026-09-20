@@ -42,6 +42,7 @@ describe('boost.enabled configuration', function (): void {
         Config::set('logging.channels.browser', [
             'driver' => 'daily',
             'path' => storage_path('logs/custom-browser.log'),
+            'level' => 'error',
         ]);
         app()->detectEnvironment(fn (): string => 'local');
 
@@ -50,7 +51,8 @@ describe('boost.enabled configuration', function (): void {
         $provider->boot(app('router'));
 
         expect(config('logging.channels.browser.driver'))->toBe('daily')
-            ->and(config('logging.channels.browser.path'))->toBe(storage_path('logs/custom-browser.log'));
+            ->and(config('logging.channels.browser.path'))->toBe(storage_path('logs/custom-browser.log'))
+            ->and(config('logging.channels.browser.level'))->toBe('error');
     });
 });
 

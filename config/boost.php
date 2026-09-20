@@ -95,6 +95,9 @@ return [
 
     'browser_logs_watcher' => env('BOOST_BROWSER_LOGS_WATCHER', true),
 
+    // Minimum severity written to the browser log channel.
+    'browser_log_level' => env('LOG_LEVEL', 'debug'),
+
     /*
     |--------------------------------------------------------------------------
     | Browser Log Levels
