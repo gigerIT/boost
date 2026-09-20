@@ -170,7 +170,7 @@ class BoostServiceProvider extends ServiceProvider
             'logging.channels.browser' => [
                 'driver' => 'single',
                 'path' => storage_path('logs'.DIRECTORY_SEPARATOR.'browser.log'),
-                'level' => env('LOG_LEVEL', 'debug'),
+                'level' => config('boost.browser_log_level', 'debug'),
                 'days' => 14,
             ],
         ]);
