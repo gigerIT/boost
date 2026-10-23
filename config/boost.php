@@ -95,6 +95,11 @@ return [
 
     'browser_logs_watcher' => env('BOOST_BROWSER_LOGS_WATCHER', true),
 
+    // Minimum severity for Boost's default browser channel; an existing
+    // logging.channels.browser configuration takes precedence. Rebuild cached
+    // configuration with php artisan config:cache after changing this threshold.
+    'browser_log_level' => env('LOG_LEVEL', 'debug'),
+
     /*
     |--------------------------------------------------------------------------
     | Browser Log Levels
